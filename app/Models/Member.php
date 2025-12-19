@@ -10,22 +10,22 @@ class Member extends Authenticatable
     use HasFactory;
 
     protected $fillable = ['name', 'email', 'password', 'employee_id'];
-
     protected $hidden = ['password'];
 
-    // المستخدم ينتمي إلى موظف واحد
+    // العضو ينتمي لموظف
     public function employee()
     {
         return $this->belongsTo(Employee::class);
     }
 
-    // المستخدم لديه عدة أدوار (Many to Many)
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class, 'role_user');
-    }
+    // العلاقة polymorphic مع الأدوار
+   public function roles()
+{
+    return $this->morphToMany(Role::class, 'authorizable', 'role_member', 'authorizable_id', 'role_id');
+}
 
-    // المستخدم يمكنه إنشاء عدة تقارير
+
+    // العضو يمكنه إنشاء عدة تقارير
     public function reports()
     {
         return $this->hasMany(Report::class, 'created_by');

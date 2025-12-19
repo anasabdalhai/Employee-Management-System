@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     use HasFactory;
+protected $casts = [
+    'hire_date' => 'date',
+];
 
     protected $fillable = [
         'first_name', 'last_name', 'gender', 'email', 'phone',

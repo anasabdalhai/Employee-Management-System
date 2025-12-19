@@ -13,7 +13,15 @@ class Report extends Model
         'title', 'type', 'created_by', 'employee_id', 'department_id',
         'report_period_start', 'report_period_end', 'content'
     ];
+     protected $casts = [
+        'report_period_start' => 'datetime',
+        'report_period_end'   => 'datetime',
+    ];
 
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
     // التقرير أنشأه مستخدم
     public function createdBy()
     {

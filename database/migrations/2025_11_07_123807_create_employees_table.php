@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('email', 100)->unique();
             $table->string('phone', 20)->nullable();
             $table->foreignId('department_id')->nullable()->constrained('departments')->nullOnDelete();
-            $table->foreignId('position_id')->nullable()->constrained('positions')->nullOnDelete();
+           
             $table->decimal('salary', 10, 2)->nullable();
             $table->date('hire_date')->nullable();
             $table->string('status', 20)->default('active');
