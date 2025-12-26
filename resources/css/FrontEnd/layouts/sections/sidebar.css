@@ -1,0 +1,58 @@
+
+/* ✅ حركة ناعمة للعناصر */
+
+
+.content-wrapper {
+    margin-left: 250px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.sidebar-collapse .content-wrapper {
+    margin-left: 80px !important;
+}
+
+.nav-sidebar .nav-link {
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+.main-sidebar {
+  background: linear-gradient(180deg, #0f2027, #203a43, #2c5364) !important;
+  margin-top: -50px;
+}
+
+
+
+
+.nav-sidebar .nav-link:hover {
+  background: linear-gradient(90deg, #007bff, #6610f2);
+  transform: translateX(6px);
+  color: #fff !important;
+}
+
+.nav-sidebar .nav-link.active {
+  background: linear-gradient(90deg, #28a745, #20c997);
+  color: #fff !important;
+  font-weight: bold;
+}
+
+/* ✅ تكبير الأيقونة عند المرور */
+.nav-sidebar .nav-link:hover .nav-icon {
+  transform: scale(1.2);
+}
+
+.nav-sidebar .nav-icon {
+  transition: all 0.3s ease-in-out;
+}
+
+/* ✅ تحسين شكل المستخدم */
+.user-panel {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.logo {
+    width: 80px;       /* حجم الصورة حسب رغبتك */
+    height: 60px;      /* يفضل أن يكون نفس العرض لدوائر مثالية */
+    border-radius: 50%; /* يجعل الصورة دائرية */
+    object-fit: cover;  /* يضمن أن الصورة تغطي المساحة بدون تشويه */
+}
+

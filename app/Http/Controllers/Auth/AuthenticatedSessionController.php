@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Models\Employee;
+use App\Models\Member;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -22,13 +23,42 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
-        $request->authenticate();
+        // تحقق من صحة الحقول
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-        $request->session()->regenerate();
+        $credentials = $request->only('email', 'password');
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        // تحقق إذا المستخدم موجود في جدول member
+        $member = Member::where('email', $credentials['email'])->first();
+        if (!$member) {
+            return back()->withErrors([
+                'email' => 'هذا الحساب غير مسجل في النظام.',
+            ]);
+        }
+
+        // تحقق إذا الموظف مرتبط بالمستخدم موجود في جدول employees
+        $employee = $member->employee; // باستخدام العلاقة
+        if (!$employee) {
+            return back()->withErrors([
+                'email' => 'أنت غير مسجل كموظف.',
+            ]);
+        }
+
+        // محاولة تسجيل الدخول
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended(route('dashboard'));
+        }
+
+        // إذا كلمة السر غير صحيحة
+        return back()->withErrors([
+            'email' => 'بيانات الدخول غير صحيحة.',
+        ]);
     }
 
     /**
@@ -39,7 +69,6 @@ class AuthenticatedSessionController extends Controller
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
         return redirect('/');

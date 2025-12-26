@@ -1,0 +1,153 @@
+
+    /* ===== Background ===== */
+    body {
+        background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* ===== Wrapper ===== */
+    .login-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 85vh;
+        padding: 20px;
+    }
+
+    /* ===== Card ===== */
+    .login-card {
+        background: #ffffff;
+        padding: 45px 40px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        max-width: 420px;
+        width: 100%;
+        text-align: center;
+        animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ===== Logo ===== */
+    .login-card img.logo {
+        width: 90px;
+        margin-bottom: 25px;
+    }
+
+    /* ===== Titles ===== */
+    .login-card h1 {
+        font-size: 26px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 8px;
+    }
+
+    .login-card p {
+        font-size: 15px;
+        color: #64748b;
+        margin-bottom: 30px;
+    }
+
+    /* ===== Form ===== */
+    .login-card .form-group {
+        margin-bottom: 18px;
+        text-align: left;
+    }
+
+    .login-card label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        font-size: 14px;
+        color: #334155;
+    }
+
+    .login-card input[type="email"],
+    .login-card input[type="password"] {
+        width: 100%;
+        padding: 13px 14px;
+        border-radius: 10px;
+        border: 1px solid #cbd5f5;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .login-card input:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+        outline: none;
+    }
+
+    /* ===== Remember me ===== */
+    .login-card input[type="checkbox"] {
+        margin-right: 6px;
+    }
+
+    /* ===== Actions ===== */
+    .login-card .actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .login-card button {
+        background: linear-gradient(135deg, #6366f1, #4f46e5);
+        color: #fff;
+        padding: 11px 26px;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .login-card button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+    }
+
+    .login-card a {
+        color: #4f46e5;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .login-card a:hover {
+        text-decoration: underline;
+    }
+
+    /* ===== Errors ===== */
+    .error-text {
+        color: #dc2626;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    /* ===== Register ===== */
+    .register-link {
+        margin-top: 28px;
+        font-size: 14px;
+        color: #64748b;
+    }
+
+    .register-link a {
+        color: #4f46e5;
+        font-weight: 600;
+    }
+    .logo {
+    width: 150px;       /* حجم الصورة حسب رغبتك */
+    height: 100px;      /* يفضل أن يكون نفس العرض لدوائر مثالية */
+    border-radius: 50%; /* يجعل الصورة دائرية */
+    object-fit: cover;  /* يضمن أن الصورة تغطي المساحة بدون تشويه */
+  
+}

@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+
+use App\Concerns\HasRole;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Member extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory,HasRole;
 
     protected $fillable = ['name', 'email', 'password', 'employee_id'];
     protected $hidden = ['password'];

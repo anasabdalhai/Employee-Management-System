@@ -1,0 +1,41 @@
+
+.navbar-glass {
+    background: rgba(255, 255, 255, 0.06) !important;
+    backdrop-filter: blur(2px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    padding: 0.5rem 1rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;   /* يغطي العرض الكامل للصفحة */
+    z-index: 1050; /* أعلى من أي عنصر آخر، حتى Sidebar */
+}
+
+/* روابط الهيدر */
+.navbar-glass .nav-link {
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar-glass .nav-link:hover {
+    color: #00c6ff;
+    text-shadow: 0 0 5px rgba(0,198,255,0.7);
+}
+
+/* أيقونات الهيدر */
+.navbar-glass .nav-item .fas {
+    color: #fff;
+    transition: 0.3s;
+}
+
+.navbar-glass .nav-item .fas:hover {
+    color: #00c6ff;
+}
+
+/* لتجنب تغطية الهيدر للمحتوى */
+body {
+    padding-top: 50px; /* ارتفاع الهيدر */
+}

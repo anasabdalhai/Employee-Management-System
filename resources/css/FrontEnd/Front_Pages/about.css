@@ -1,0 +1,135 @@
+
+
+    /* ===== Container ===== */
+.about-container {
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+}
+
+/* ===== Header ===== */
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1f3c88;
+}
+
+.about-header p {
+    font-size: 1.2rem;
+    color: #4b4b4b;
+}
+
+/* ===== Content ===== */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.about-text {
+    flex: 1 1 55%;
+}
+
+.about-text h2 {
+    color: #1f3c88;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.about-text p, .about-text ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-text ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.about-image {
+    flex: 1 1 40%;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ===== Team Section ===== */
+.team-section {
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 2rem;
+    color: #1f3c88;
+    margin-bottom: 40px;
+}
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.team-card {
+    background: #f0f4f8;
+    border-radius: 20px;
+    padding: 25px;
+    width: 220px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-card h3 {
+    font-size: 1.2rem;
+    color: #1f3c88;
+    margin-bottom: 5px;
+}
+
+.team-card p {
+    font-size: 0.95rem;
+    color: #4b4b4b;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image, .about-text {
+        flex: 1 1 100%;
+    }
+
+    .team-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
