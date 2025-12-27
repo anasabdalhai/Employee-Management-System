@@ -48,22 +48,19 @@
            <div class="team-card">
     <img src="/layout/anas1.png" alt="انس">
     <h3>Eng.Anas</h3>
-    <p> مدير المشروع ومطور </p>
-    <h6>Back End</h6>
+   
     
 </div>
 
             <div class="team-card">
                <img src="/layout/ahmad.png" alt="احمد">
                 <h3>Eng.Ahmad</h3>
-                <p> المطور الرئيسي ل</p>
-                <h6>Front End</h6>
+              
             </div>
             <div class="team-card">
-                <img src="/layout/abd.jpeg" alt="عبد">
-                <h3>Eng.Abd alrahman</h3>
-                <p>مصمم واجهة المستخدم </p>
-                <h6>page User</h6>
+                <img src="/layout/nour.jpeg" alt="عبد">
+                <h3>Eng.mohamed</h3>
+              
             </div>
         </div>
     </div>

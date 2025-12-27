@@ -233,7 +233,7 @@ Route::middleware('auth')->group(function () {
 | Members & Roles (Admin only)
 |--------------------------------------------------------------------------
 */
-Route::middleware(['auth', 'ability:members.view'])->group(function () {
+Route::middleware(['auth', 'ability:users.view'])->group(function () {
 
     // Members
     Route::get('/members', [MemberController::class, 'index'])->name('members.index');
